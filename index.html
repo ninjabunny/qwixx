@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+    <head>
+        <link rel="stylesheet" href="css/main.css?v=1.0">
+        <title>Qwixx</title>
+    </head>
+
+    <body>
+        <p id='white'>
+          red
+        </p>
+        <p id='red'>
+          red
+        </p>
+        <p id='yellow'>
+          red
+        </p>
+        <p id='green'>
+          red
+        </p>
+        <p id='blue'>
+          red
+        </p>
+        <button onclick="fire()">ROLL
+        </button>
+
+    </body>
+    <script>
+        function fire() {
+          var white = document.getElementById("white");
+          var red = document.getElementById("red");
+          var yelow = document.getElementById("yellow");
+          var green = document.getElementById("green");
+          var blue = document.getElementById("blue");
+
+          var whiteRoll1 = roll();
+          var whiteRoll2 = roll();
+
+          white.innerHTML = whiteRoll1 + whiteRoll2;
+          var redRoll = roll();
+          red.innerHTML = (redRoll + whiteRoll1) + " / " + (redRoll + whiteRoll2);
+          var yellowRoll = roll();
+          yellow.innerHTML = (yellowRoll + whiteRoll1) + " / " + (yellowRoll + whiteRoll2);
+          var greenRoll = roll();
+          green.innerHTML = (greenRoll + whiteRoll1) + " / " + (greenRoll + whiteRoll2);
+          var blueRoll = roll();
+          blue.innerHTML = (blueRoll + whiteRoll1) + " / " + (blueRoll + whiteRoll2);
+        }
+        function roll(){
+            return Math.floor(6*Math.random())+1;  
+        }
+
+        fire();
+    </script>
+</html>
